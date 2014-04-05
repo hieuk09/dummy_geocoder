@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple library for mocking geocoder"
   s.authors     = ["Hieu Nguyen"]
   s.email       = 'hieu.nguyen@eastagile.com'
-  s.files       = ["lib/dummy_geocoder.rb"]
-  s.homepage    = 'http://rubygems.org/gems/hola'
+  s.files       = Dir['lib/*']
+  s.homepage    = 'https://github.com/hieuk09/dummy_geocoder'
   s.license     = 'MIT'
 end

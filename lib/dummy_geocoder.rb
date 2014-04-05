@@ -1,17 +1,18 @@
 ##
 # Mock HTTP request to geocoding service.
 #
+require 'sample_data'
+
 module Geocoder
   module Lookup
     class Base
       private
-      def fixture_exists?(filename)
-        File.exist?(File.join("spec", "factories", filename))
+      def fixture_exists?(fixture_name)
+        SampleData.respond_to?(fixture_name)
       end
 
-      def read_fixture(file)
-        filepath = File.join("spec", "factories", file)
-        s = File.read(filepath).strip.gsub(/\n\s*/, "")
+      def read_fixture(fixture_name)
+        s = SampleData.send(fixture_name).strip.gsub(/\n\s*/, "")
         s.instance_eval do
           def body; self; end
           def code; "200"; end
@@ -22,7 +23,7 @@ module Geocoder
       ##
       # Fixture to use if none match the given query.
       #
-      def default_fixture_filename
+      def default_fixture_name
         "#{fixture_prefix}_madison_square_garden"
       end
 
@@ -32,8 +33,8 @@ module Geocoder
 
       def fixture_for_query(query)
         label = query.reverse_geocode? ? "reverse" : query.text.gsub(/[ \.]/, "_")
-        filename = "#{fixture_prefix}_#{label}"
-        fixture_exists?(filename) ? filename : default_fixture_filename
+        fixture_name = "#{fixture_prefix}_#{label}"
+        fixture_exists?(fixture_name) ? fixture_name : default_fixture_name
       end
 
       remove_method(:make_api_request)
