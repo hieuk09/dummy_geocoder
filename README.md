@@ -13,13 +13,16 @@ You can install from console
 gem install dummy_geocoder
 ```
 
-or put it in `group :test` of your gemfile
+or put it in `group :test` of your gemfile.
 
 ```ruby
 group :test
   gem 'dummy_dropbox'
 end
 ```
+
+After that, you can use geocoder gem normally without worry that it will make
+calls to Geocoding API :)
 
 Credit
 ==
