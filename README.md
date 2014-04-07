@@ -11,7 +11,7 @@ Install
 
 You can install from console
 
-```shell
+```zsh
 gem install dummy_geocoder
 ```
 
@@ -21,6 +21,12 @@ or put it in `group :test` of your gemfile.
 group :test
   gem 'dummy_dropbox'
 end
+```
+
+then run
+
+```zsh
+bundle install
 ```
 
 After that, you can use geocoder gem normally without worry that it will make
