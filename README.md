@@ -1,6 +1,8 @@
 dummy_geocoder
 ==============
 
+[![Gem Version](https://badge.fury.io/rb/dummy_geocoder.svg)](http://badge.fury.io/rb/dummy_geocoder)
+
 Simple library for mocking geocoder.
 You can test your application without making real calls to Geocoding API.
 
