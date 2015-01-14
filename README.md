@@ -18,8 +18,8 @@ gem install dummy_geocoder
 or put it in `group :test` of your gemfile.
 
 ```ruby
-group :test
-  gem 'dummy_dropbox'
+group :test do
+  gem 'dummy_geocoder'
 end
 ```
 
